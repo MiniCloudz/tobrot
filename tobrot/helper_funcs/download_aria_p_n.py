@@ -473,8 +473,8 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 i = 0
                 i = int(i)
                 STR = int(os.environ.get("STR", 30))
-                msg = f"╔═════ ▓▓ ࿇📥 <b>𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜</b> ࿇ ▓▓ ═════╗ \n"
-                msg += "┃"+"\n├"+f"{prg}\n" +"│"
+                msg = f"╔═════ ࿇📥 <b>𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜</b>\n"
+                msg += "┃"+"\n┣"+f"{prg}\n" +"┃"
                 msg += f"\n┣<b>𝙁𝙞𝙡𝙚𝙣𝙖𝙢𝙚</b> 📚: "
                 while(len(downloading_dir_name)>0):
                     st = downloading_dir_name[0:STR]
@@ -496,7 +496,7 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
 
                 # msg += f"\n<b>Status</b> : <code>{file.status}</code>"
                 msg += f"\n┣<b>𝗘𝗧𝗔</b> ⏳ :  <code>{file.eta_string()}</code>" +"\n╔╦══• •✠•❀  ❀•✠• •══╦╗"
-                msg += "\n ⟰⚡️ ᴜsɪɴɢ ᴇɴɢɪɴᴇ ᴀʀɪᴀ2 ⟱  \n╚╩══• •✠•❀  ❀•✠• •══╩╝"
+                msg += "\n ⟰⚡️ᴜsɪɴɢ ᴇɴɢɪɴᴇ ᴀʀɪᴀ2 ⟱  \n╚╩══• •✠•❀  ❀•✠• •══╩╝"
                 inline_keyboard = []
                 ikeyboard = []
                 ikeyboard.append(InlineKeyboardButton("𝗖𝗮𝗻𝗰𝗹𝗲 ❌", callback_data=(f"cancel {gid}").encode("UTF-8")))
