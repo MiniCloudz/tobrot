@@ -473,9 +473,9 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                 i = 0
                 i = int(i)
                 STR = int(os.environ.get("STR", 30))
-                msg = f"╭──────── ⌊ 📥 <b>Downloading</b> ⌉ \n"
+                msg = f"╭──────── ⌊ 📥 <b>𝘿𝙤𝙬𝙣𝙡𝙤𝙖𝙙𝙞𝙣𝙜</b> ⌉ \n"
                 msg += "│"+"\n├"+f"{prg}\n" +"│"
-                msg += f"\n├<b>FileName</b> 📚: "
+                msg += f"\n├<b>𝙁𝙞𝙡𝙚𝙣𝙖𝙢𝙚</b> 📚: "
                 while(len(downloading_dir_name)>0):
                     st = downloading_dir_name[0:STR]
                     if(i==0):
@@ -486,17 +486,19 @@ async def check_progress_for_dl(aria2, gid, event, previous_message):
                         msg += f"\n│{st}"
                         downloading_dir_name = downloading_dir_name[STR:len(downloading_dir_name)]
 			
-                msg += f"\n├<b>Speed</b> 🚀 :  <code>{file.download_speed_string()} </code>"
-                msg += f"\n├<b>Total Size</b> 🗂 :  <code>{file.total_length_string()}</code>"
+                msg += f"\n┣<b>𝙎𝙥𝙚𝙚𝙙</b> 🚀 :  <code>{file.download_speed_string()} </code>"
+                msg += f"\n┣<b>𝙏𝙤𝙩𝙖𝙡 𝙨𝙞𝙯𝙚</b> 🗂 :  <code>{file.total_length_string()}</code>"
 
                 if is_file is None :
-                   msg += f"\n├<b>Connections</b> 📬 :  <code>{file.connections}</code>"
+                   msg += f"\n┣<b>Connections</b> 📬 :  <code>{file.connections}</code>"
                 else :
-                   msg += f"\n├<b>Info</b> 📄 : <code>[ P : {file.connections} || S : {file.num_seeders} ]</code>"
+                   msg += f"\n┣<b>𝗜𝗻𝗳𝗼</b> 📄 : <code>[ P : {file.connections} || S : {file.num_seeders} ]</code>"
 
                 # msg += f"\n<b>Status</b> : <code>{file.status}</code>"
-                msg += f"\n├<b>ETA</b> ⏳ :  <code>{file.eta_string()}</code>" +"\n│"
-                msg += "\n╰─── ⌊ ⚡️ using engine aria2 ⌉"
+                msg += f"\n┣<b>𝗘𝗧𝗔</b> ⏳ :  <code>{file.eta_string()}</code>" +"\n│"
+		msg += f"\n╔══════════════════╗{st}"
+                msg += "\n ⟰⚡️ ᴜsɪɴɢ ᴇɴɢɪɴᴇ ᴀʀɪᴀ2  ⟱"
+		msg += f"\n╚══════════════════╝{st}"
                 inline_keyboard = []
                 ikeyboard = []
                 ikeyboard.append(InlineKeyboardButton("Cancel ❌", callback_data=(f"cancel {gid}").encode("UTF-8")))
